@@ -37,5 +37,13 @@ export const styles = StyleSheet.create({
     fontSize: 10,
     color: '#979797',
     width: '100%' // Fixes: https://github.com/calintamas/react-native-toast-message/issues/130
+  },
+  buttonRoot: {
+    backgroundColor: '#fff'
+  },
+  buttonText: {
+    fontSize: 10,
+    color: '#979797',
+    fontWeight: 'bold',
   }
 });

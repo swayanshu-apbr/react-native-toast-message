@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ButtonProps,
   StyleProp,
   TextProps,
   TextStyle,
@@ -100,6 +101,10 @@ export type BaseToastProps = {
   text2Props?: TextProps;
   renderLeadingIcon?: () => React.ReactNode;
   renderTrailingIcon?: () => React.ReactNode;
+  showButton?: boolean;
+  buttonRootStyle?: StyleProp<ViewStyle>;
+  buttonTextStyle?: StyleProp<TextStyle>;
+  buttonProps?:ButtonProps;
 };
 
 export type ToastConfigParams<Props> = {

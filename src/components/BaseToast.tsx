@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 
 import { BaseToastProps } from '../types';
 import { getTestId } from '../utils/test-id';
@@ -9,6 +9,7 @@ import { Touchable } from './Touchable';
 export function BaseToast({
   text1,
   text2,
+  showButton,
   onPress,
   activeOpacity,
   style,
@@ -21,6 +22,9 @@ export function BaseToast({
   text2Style,
   text2NumberOfLines = 1,
   text2Props,
+  buttonProps,
+  // buttonRootStyle,
+  // buttonTextStyle,
   renderLeadingIcon,
   renderTrailingIcon
 }: BaseToastProps) {
@@ -56,6 +60,16 @@ export function BaseToast({
             {text2}
           </Text>
         )}
+        {
+          (showButton ?? false) && (
+            <Button
+            testID={getTestId('Button')}
+            // style={[styles.buttonRoot, buttonRootStyle]}
+            title={buttonProps?.title ?? 'Click Me'}
+            {...buttonProps}
+            />
+          )
+        }
       </View>
       {renderTrailingIcon && renderTrailingIcon()}
     </Touchable>
